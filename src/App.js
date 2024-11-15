@@ -10,11 +10,7 @@ function App() {
   return (
     <>
       <Header />
-      <Hello />
-      <HelloPerson name={'Phạm Tuấn Vũ'} />
-      <Hi /> <br></br>
-      <Car />
-      <Login />
+
     </>
   );
 }
