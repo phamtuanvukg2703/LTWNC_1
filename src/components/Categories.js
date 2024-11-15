@@ -1,26 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-export default function Category() {
+export default function Categories() {
     const [categories, setCategories] = useState([]);
 
     // Hàm fetch dữ liệu từ API
-    const fetchNhomData = async () => {
-        try {
-            const response = await axios.get('http://localhost:3001/api/v1/get-all-nhom');
-            setCategories(response.data.Nhom);
-            ;
-        } catch (error) {
 
-
-        }
-    };
-
-    // Sử dụng useEffect để gọi API khi component mount
     useEffect(() => {
-        fetchNhomData();
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://localhost:3001/api/v1/get-all-nhom');
+                setCategories(response.data.Nhom);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                // setCategories([]);
+            }
+        };
+        fetchData();
     }, []);
-
     return (
         <div>
             <table className="table">

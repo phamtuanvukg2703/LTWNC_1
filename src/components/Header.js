@@ -5,7 +5,7 @@ export default function Header() {
     const list = [
         { text: "Trang chủ", url: "/" },
         { text: "Danh mục", url: "/category-product" },
-        { text: "Sản phẩm", url: "/product" }
+        { text: "Sản phẩm", url: "/products" }
     ]
     return (
         <>
